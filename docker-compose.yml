@@ -30,7 +30,7 @@ services:
   phpmyadmin:
     image: phpmyadmin:latest
     ports:
-      - "8080:80"
+      - "9476:9476"
     environment:
       PMA_HOST: wdpvendas
       MYSQL_ROOT_PASSWORD: 1234
