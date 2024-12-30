@@ -17,13 +17,17 @@ public class ProdutoImagens {
     private Long id;
 
     private String nome;
+
     @ManyToOne
     @JoinColumn(name = "idProduto")
     private Produto produto;
+
     @Temporal(TemporalType.TIMESTAMP)
     private Date dataCriacao;
+
     @Temporal(TemporalType.TIMESTAMP)
     private Date dataAtualizacao;
+    
     @Transient
     private byte[] arquivo;
 }

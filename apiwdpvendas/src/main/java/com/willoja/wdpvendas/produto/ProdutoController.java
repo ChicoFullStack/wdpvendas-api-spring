@@ -27,6 +27,12 @@ public class ProdutoController {
         return service.buscaTodos();
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<Produto> buscarPorId(@PathVariable("id") Long id) {
+        Produto produto = service.buscarPorId(id);
+        return produto != null ? ResponseEntity.ok(produto) : ResponseEntity.notFound().build();
+    }
+
     @PostMapping("/")
     public Produto inserir(@RequestBody Produto obj){
         return service.inserir(obj);
